@@ -1,6 +1,6 @@
 import random
 
-class ramdom:
+class createnumber:
     #一桁目
     number = []
     tmp = random.randint(0,9)
