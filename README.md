@@ -18,7 +18,7 @@
     - response
         ```json
             {
-                "number":1234,
+                "number":1234
             }
         ```
 - /ranking
@@ -34,12 +34,12 @@
                 {
                     "rank":1,
                     "name":"hoge",
-                    "moves":2, // 何手でクリアしたか
+                    "moves":2 // 何手でクリアしたか
                 },
                 {
                     "rank":2,
                     "name":"hage",
-                    "moves":3, // 何手でクリアしたか
+                    "moves":3 // 何手でクリアしたか
                 },
 
             ]
@@ -50,7 +50,7 @@
         ```json
             {
                 "name":"hoge",
-                "moves":3,
+                "moves":3
             }
         ```
     - response
