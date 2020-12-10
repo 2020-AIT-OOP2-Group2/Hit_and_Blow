@@ -7,10 +7,12 @@
     <script defer src="{{ url_for('static', filename='playRequest.js') }}"></script>
 </head>
 <body>
-    <h1 class="title">入力画面</h1>
+    <h1 class="title">Hit and Blow</h1>
+    <div id="judge_result" name="judge_result">ここに判定</div>
     <label for="nums"><br>４桁の数字を入力:</label>
     <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:0000">
+    <button id="vote">送信</button>
     <br>
-    <button>ログを表示</button>
+    <button id="get_log">ログを表示</button>
 </body>
 </html>
