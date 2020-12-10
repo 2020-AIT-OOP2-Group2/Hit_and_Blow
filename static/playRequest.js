@@ -2,6 +2,7 @@ var num;
 var play_count;
 var hit,blow;
 
+
 fetch("/start").then(response => {
     console.log(response);
     response.json().then((data) => {
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         var input_num=document.forms.inputs.nums.value;
 
         //数字かどうか
-        if(!isNaN(input_num)){
+        if(!Number(input_num)){
             alert("文字が入力されています");
             return;
         }
