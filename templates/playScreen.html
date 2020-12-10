@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit and Blowプレイ画面</title>
     <script defer src="{{ url_for('static', filename='playRequest.js') }}"></script>
+    <!-- <script type="text/javascript" src="../static/playRequest.js"></script> -->
 </head>
 <body>
     <h1 class="title">Hit and Blow</h1>
     <div id="judge_result" name="judge_result">ここに判定</div>
     <label for="nums"><br>ユニークな４桁の数字を入力:</label>
-    <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:0000">
+    <form id="inputs">
+        <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:0000">
+    </form>
     <button id="vote">送信</button>
-    <br>
-    <button id="get_log">ログを表示</button>
 </body>
 </html>
