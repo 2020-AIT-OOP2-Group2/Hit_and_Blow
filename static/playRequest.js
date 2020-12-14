@@ -1,7 +1,8 @@
-var num;
-var play_count;
-var hit,blow;
-
+var num=1234;
+var play_count=0;
+var hit=0,blow=0;
+var n=new Array(4);
+var n_s=new Array(4);
 
 fetch("/start").then(response => {
     console.log(response);
@@ -29,25 +30,50 @@ document.addEventListener("DOMContentLoaded", (e)=>{
             alert("４桁の数字を入力してください");
             return;
         }
-    
-        //ここで桁数ごとにわける
-        var n1 = Math.floor(input_num / 1000) % 10; //1桁目
-        var n2 = Math.floor(input_num / 100) % 10; //2桁目
-        var n3 = Math.floor(input_num / 10) % 10; //3桁目
-        var n4 = Math.floor(input_num / 1) % 10; //4桁目
+
+        for(let i=0;i<4;i++){
+            n[i]=Math.floor(input_num / Math.pow(10,i)) % 10;
+        }
+        for(let i=0;i<4;i++){
+            n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
+        }
     
         //ユニークかどうか
-        if(n1==n2 || n1==n3 || n1==n4 || n2==n3 || n2==n4 || n3==n4){
+        if(n[0]==n[1] || n[0]==n[2] || n[0]==n[3] || n[1]==n[2] || n[1]==n[3] || n[2]==n[3]){
             alert("ユニークな数字を入力してください");
             return;
         }
         
-        console.log(n1,n2,n3,n4);
+        console.log(n);
+        console.log(n_s);
 
         if(num==input_num){
             //正解だったら
+            document.getElementById("judge_result").innerHTML="正解です";
         }else{
             //間違いだったら
+            for(let j=0;j<4;j++){
+                for(let i=0;i<4;i++){
+                    if(j!=i){
+                        if(n[j]==n_s[i]){
+                            blow++;
+                        }
+                    }
+                }
+            }
+            for(let i=0;i<4;i++){
+                if(n[i]==n_s[i]){
+                    hit++;
+                }
+            }
+
+            play_count++;
+
+            document.getElementById("judge_result").innerHTML=String(hit)+"Hit "+String(blow)+"blow "+"試行回数:"+String(play_count);
+
+            hit=0;
+            blow=0;
+
         }
         
     })
