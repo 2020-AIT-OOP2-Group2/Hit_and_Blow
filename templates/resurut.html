@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resurt.css') }}">
+</head>
+<body>
+    <h1>結果発表</h1>
+    <form action="/app" method="POST">
+        <p1 class="resurut_out">
+            <p2><br>おめでとう<br></p2>
+          <label>○○さんは○手でクリアできました！ </label>
+          <button id="name_log">ランキング一覧</button>
+        <button id="restrat_set">もう一度チャレンジ</button>
+        <button id="finish_set">終了する</button>
+        </p1>
+        
+    
+</body>
+</html>
