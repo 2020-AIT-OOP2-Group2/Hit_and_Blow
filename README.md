@@ -57,3 +57,23 @@
         ```
             None
         ```
+
+## Dockerの使い方
+### ファイル，ディレクトリの説明
+- /mysql
+  - mysqlの設定ファイルや，dockerイメージをビルドするためのファイルがある．
+- /mysql/Dockerfile
+  - dockerイメージをビルドするためのファイル
+- /mysql/db
+  - データベースの構成が書いてあるファイルが入っている
+- ./docker-compose.yaml
+  - dockerのコンテナを管理するためのファイル
+
+### コマンド
+- `docker-compose up -d --build`
+  - dockerコンテナを起動するコマンド
+
+## 使い方
+1. `docker-compose up -d --build` する
+2. 初回起動時のみ，データベースの初期化があるため3分ほど待つ
+3. pythonのアプリを起動する
