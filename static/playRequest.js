@@ -4,6 +4,7 @@ var hit=0,blow=0;
 var n=new Array(4);
 var n_s=new Array(4);
 var hint_index,hint_num;
+
 /**
 fetch("/start").then(response => {
     console.log(response);
@@ -18,16 +19,16 @@ for(let i=0;i<4;i++){
     n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
 }
 
-
 document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('vote').addEventListener("click", (e)=>{
         //ボタンが本来持っている処理をなかったことにする
         e.preventDefault();
         var input_num=document.forms.inputs.nums.value;
 
-        if(input_num.length==0){
+        if(String(input_num).length==0){
             //alert("数字が入力されていません");
             document.getElementById("error_message").innerHTML="数字が入力されていません";
+            return;
         }
 
         //数字かどうか
@@ -46,10 +47,6 @@ document.addEventListener("DOMContentLoaded", (e)=>{
 
         for(let i=0;i<4;i++){
             n[i]=Math.floor(input_num / Math.pow(10,i)) % 10;
-        }
-
-        for(let i=0;i<4;i++){
-            n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
         }
     
         //ユニークかどうか
