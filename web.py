@@ -16,7 +16,7 @@ def start():
 #結果
 @app.route('/play/ranking')
 def ranking():
-    return render_template('resurt.html')
+    return render_template('result.html')
 
 if __name__ == "__main__":
     app.register_blueprint(random_number.random_number)
