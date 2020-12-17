@@ -9,10 +9,11 @@
 </head>
 <body>
     <h1 class="title">Hit and Blow</h1>
+    <button onclick="javascript:window.history.back(-1);return false;">戻る</button>
     <div id="judge_result" name="judge_result">ここに判定</div>
     <label for="nums"><br>ユニークな４桁の数字を入力:</label>
     <form id="inputs">
-        <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:0000">
+        <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:1234">
     </form>
     <button id="vote">送信</button>
 </body>
