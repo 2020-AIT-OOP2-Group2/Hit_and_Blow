@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         for(let i=0;i<4;i++){
             n[i]=Math.floor(input_num / Math.pow(10,i)) % 10;
         }
+        
         for(let i=0;i<4;i++){
             n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
         }
