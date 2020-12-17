@@ -8,10 +8,18 @@ db = dbctl()
 @ranking.route('/ranking', methods=['GET', 'POST'])
 def ranking_response():
 
-    json_data = db.getRanking()
-
     if request.method == 'GET':
+        json_data = db.getRanking()
         return jsonify(json_data)
+    elif request.method == 'POST':
+        if request.json == '':
+            return jsonify({
+                'message': 'JSON not found.'
+            })
+
+        print(request.json)
+        db.postRanking(request.json['name'], request.json['moves'])
+        return jsonify({})
 
 
 if __name__ == "__main__":
