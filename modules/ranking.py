@@ -1,11 +1,14 @@
 from flask import Blueprint, jsonify, request, json, Flask
+from sql import dbctl
+
 ranking = Blueprint('ranking', __name__)
+db = dbctl()
 
 
 @ranking.route('/ranking', methods=['GET', 'POST'])
 def ranking_response():
-    with open('../ranking.json') as f:
-        json_data = json.load(f)
+
+    json_data = db.getRanking()
 
     if request.method == 'GET':
         return jsonify(json_data)

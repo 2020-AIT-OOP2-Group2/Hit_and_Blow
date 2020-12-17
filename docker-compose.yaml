@@ -12,4 +12,4 @@ services:
       MYSQL_USER: group2
       MYSQL_PASSWORD: ChangeMe # 運用時は変更する
     ports:
-      - '3306:33060'
+      - '33060:3306'
