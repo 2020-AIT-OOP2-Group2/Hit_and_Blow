@@ -19,7 +19,7 @@ def ranking_response():
 
         print(request.json)
         db.postRanking(request.json['name'], request.json['moves'])
-        return jsonify({})
+        return jsonify({})  # 表示できるページが存在しないというエラーが出るため，空のJSONを返す
 
 
 if __name__ == "__main__":
