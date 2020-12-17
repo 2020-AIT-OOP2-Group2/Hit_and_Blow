@@ -1,10 +1,11 @@
 from flask import Blueprint, jsonify, request, json, Flask
 random_number = Blueprint('random_number', __name__)
-from create_number import createnumber
+#from create_number import createnumber
+from .create_number import createnumber
 
 @random_number.route('/start')
 def index():
-    return jsonify({"number":createnumber.num})
+    return jsonify({"number":createnumber.create_num()})
 
 
 if __name__ == "__main__":
