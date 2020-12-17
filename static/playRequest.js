@@ -3,7 +3,7 @@ var play_count=0;
 var hit=0,blow=0;
 var n=new Array(4);
 var n_s=new Array(4);
-
+var hint_index,hint_num;
 /**
 fetch("/start").then(response => {
     console.log(response);
@@ -13,6 +13,10 @@ fetch("/start").then(response => {
     });
 });
 **/
+
+for(let i=0;i<4;i++){
+    n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
+}
 
 
 document.addEventListener("DOMContentLoaded", (e)=>{
@@ -43,7 +47,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         for(let i=0;i<4;i++){
             n[i]=Math.floor(input_num / Math.pow(10,i)) % 10;
         }
-        
+
         for(let i=0;i<4;i++){
             n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
         }
@@ -83,12 +87,24 @@ document.addEventListener("DOMContentLoaded", (e)=>{
             play_count++;
 
             document.getElementById("judge_result").innerHTML=String(hit)+"Hit "+String(blow)+"blow";
-            document.getElementById("judge_log").innerHTML+="\n"+"回数: "+String(play_count)+" "+String(input_num)+" -> "+String(hit)+" Hit "+String(blow)+"blow";
+            document.getElementById("judge_log").innerHTML+="<br>"+"回数: "+String(play_count)+" "+String(input_num)+" -> "+String(hit)+" Hit "+String(blow)+"blow";
 
             hit=0;
             blow=0;
 
         }
         
+    })
+}, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('get_hint').addEventListener("click", (e)=>{
+        e.preventDefault();
+        play_count++;
+        hint_index=play_count%3;
+        
+        document.getElementById("judge_log").innerHTML+="<br>"+"回数:"+String(play_count)+" ヒント: "+String(4-hint_index)+"桁目は "+String(n_s[hint_index]);
+
+        document.getElementById('get_hint').style.display="none";
     })
 }, false);

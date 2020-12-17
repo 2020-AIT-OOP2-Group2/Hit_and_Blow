@@ -8,8 +8,11 @@
     <script type="text/javascript" src="../static/playRequest.js"></script>
 </head>
 <body>
-    <h1 class="title">Hit and Blow</h1>
-    <button onclick="javascript:window.history.back(-1);return false;">home</button>
+    <h1 class="title">Hit and Blow
+        <button onclick="javascript:window.history.back(-1);return false;">home</button>
+        <button>Ranking</button>
+        <button id="get_hint">Hint(残り1)</button>
+    </h1>
     <div id="judge_result" name="judge_result"></div>
     <label for="nums"><br>ユニークな４桁の数字を入力:</label>
     <form id="inputs">
@@ -17,6 +20,6 @@
     </form>
     <button id="vote">judge!</button>
     <div id="error_message" style="color: red;"></div>
-    <div id="judge_log">Result Log</div>
+    <div id="judge_log">Result Log<br></div>
 </body>
 </html>
