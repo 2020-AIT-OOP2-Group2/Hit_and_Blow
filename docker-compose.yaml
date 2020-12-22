@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    build:
+      context: ./mysql
+    container_name: 'hab_database'
+    volumes:
+      - ./mysql/db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: production_db
+      MYSQL_USER: group2
+      MYSQL_PASSWORD: ChangeMe # 運用時は変更する
+    ports:
+      - '33060:3306'
