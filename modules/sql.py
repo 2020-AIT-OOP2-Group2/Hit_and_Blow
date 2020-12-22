@@ -22,10 +22,10 @@ class dbctl():
             return None
         try:
             with self.conn.cursor() as cursor:
-                query_string = 'select * from scores order by score asc;'
+                query_string = "select rank() over(order by score asc) as 'rank',player as name ,score as moves from scores order by 'rank' asc limit 10;"
                 cursor.execute(query_string)
                 query_result = cursor.fetchall()
-                print(query_result)
+                # print(query_result)
         finally:
             return query_result
 
