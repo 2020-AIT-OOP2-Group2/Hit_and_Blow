@@ -22,10 +22,10 @@ class dbctl():
             return None
 
         with self.conn.cursor() as cursor:
-            query_string = 'select * from scores order by score asc;'
+            query_string = 'select * from scores order by score asc limit 10;'
             cursor.execute(query_string)
             query_result = cursor.fetchall()
-            print(query_result)
+            # print(query_result)
         return query_result
 
     def postRanking(self, name, score):
