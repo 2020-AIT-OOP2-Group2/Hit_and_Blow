@@ -24,7 +24,7 @@ def start():
 
 @app.route('/play/ranking')
 def ranking():
-    return render_template('resurt.html')
+    return render_template('result.html')
 
 
 if __name__ == "__main__":

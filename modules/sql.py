@@ -36,7 +36,7 @@ class dbctl():
         with self.conn.cursor() as cursor:
             query_string = 'insert into scores(player,score) values (%s,%s)'
             cursor.execute(query_string, (name, score,))
-        self.conn.commit()
+        self.conn.commit() 
 
 
 if __name__ == '__main__':
