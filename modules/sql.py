@@ -22,7 +22,7 @@ class dbctl():
             return None
 
         with self.conn.cursor() as cursor:
-            query_string = 'select * from scores order by score asc limit 10;'
+            query_string = "select rank() over(order by score asc) as 'rank',player as name ,score as moves from scores order by 'rank' asc limit 10;"
             cursor.execute(query_string)
             query_result = cursor.fetchall()
             # print(query_result)
@@ -36,7 +36,7 @@ class dbctl():
         with self.conn.cursor() as cursor:
             query_string = 'insert into scores(player,score) values (%s,%s)'
             cursor.execute(query_string, (name, score,))
-        self.conn.commit() 
+        self.conn.commit()
 
 
 if __name__ == '__main__':
