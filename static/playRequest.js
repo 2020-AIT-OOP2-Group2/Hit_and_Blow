@@ -1,4 +1,5 @@
-var num=1234;
+var num;
+var player_name;
 var play_count=0;
 var hit=0,blow=0;
 var n=new Array(4);
@@ -9,13 +10,16 @@ fetch("/start").then(response => {
     console.log(response);
     response.json().then((data) => {
         console.log(data.number);  // 取得されたレスポンスデータをデバッグ表示
-        num=data.number;　//数字を取得
+        num=parseInt(data.number);　//数字を取得
+        for(let i=0;i<4;i++){
+            n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
+        }
     });
 });
 
-for(let i=0;i<4;i++){
-    n_s[i]=Math.floor(num / Math.pow(10,i)) % 10;
-}
+player_name=localStorage.getItem("storageName");
+console.log(player_name);
+document.getElementById('name_place').innerHTML=player_name+"さん、こんにちは"
 
 document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('vote').addEventListener("click", (e)=>{
@@ -57,10 +61,15 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         console.log(n);
         console.log(n_s);
 
+        play_count++;
+
         if(num==input_num){
             //正解だったら
             document.getElementById("judge_result").innerHTML="正解です";
             document.getElementById("error_message").innerHTML="";
+            localStorage.setItem("play_count",play_count);
+            location.href="/play/ranking"
+
         }else{
             document.getElementById("error_message").innerHTML="";
             //間違いだったら
@@ -79,7 +88,6 @@ document.addEventListener("DOMContentLoaded", (e)=>{
                 }
             }
 
-            play_count++;
 
             document.getElementById("judge_result").innerHTML=String(hit)+"Hit "+String(blow)+"blow";
             document.getElementById("judge_log").innerHTML+="<br>"+"回数: "+String(play_count)+" "+String(input_num)+" -> "+String(hit)+" Hit "+String(blow)+"blow";
