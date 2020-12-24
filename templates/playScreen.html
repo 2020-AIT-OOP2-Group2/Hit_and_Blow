@@ -14,15 +14,33 @@
         <button id="back_home">home</button>
         <button id="view_ranking">Ranking</button>
         <button id="get_hint">Hint(1回まで)</button>
-    </h1>
-    <div id="judge_result" name="judge_result"></div>
-    <div id="name_place">名無しさん、こんにちは</div>
-    <label for="nums"><br>ユニークな４桁の数字を入力:</label>
-    <form id="inputs">
-        <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:1234">
-    </form>
-    <button id="vote">judge!</button>
-    <div id="error_message" style="color: red;"></div>
-    <div id="judge_log">Result Log<br></div>
-</body>
-</html>
+        <body class="p-3 mb-2 bg-info text-white">
+            <div class="text-center">
+            <h1 >Hit and Blow
+            <div class="d-flex align-items-start">
+                <div class="text-right">
+                    <u class="text-warning" onclick="javascript:window.history.back(-1);return false;">home</u>
+                    <u class="text-warning">Ranking</u>
+                </div>
+            </div>
+        </h1>
+        <h2>
+            <div class="text-right">
+            <button id="get_hint">Hint(残り1)</button>
+            </div>
+        </h2>
+        <h5>
+        <div id="judge_result" name="judge_result"></div>
+        <div id="name_place">名無しさん、こんにちは</div>
+        <label for="nums"><br>ユニークな４桁の数字を入力:</label>
+        <form id="inputs">
+            <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:1234">
+        </form>
+        <button id="vote">judge!</button>
+        <div id="error_message" style="color: red;"></div>
+        <div id="judge_log">Result Log<br></div>
+        </div>  
+        </h5>
+        </body>
+    </body>
+    </html>
