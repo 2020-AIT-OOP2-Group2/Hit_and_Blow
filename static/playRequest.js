@@ -103,6 +103,14 @@ document.addEventListener("DOMContentLoaded", (e)=>{
 }, false);
 
 document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('back_home').addEventListener("click", (e)=>{
+        e.preventDefault();
+        
+        location.href="/";
+    })
+}, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('get_hint').addEventListener("click", (e)=>{
         e.preventDefault();
         play_count++;
