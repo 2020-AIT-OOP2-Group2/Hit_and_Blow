@@ -86,6 +86,8 @@
 
 ### 事前準備
 1. Dockerをインストールする(上記の[Dockerの使い方]を参照)
+2, cryptographyをインストール`pip install cryptography`
+3, PyMySQLをインストールする`pip install PyMySQL`
 
 ### 実行方法
 1. Dockerを立ち上げる(上記の[Dockerの使い方]を参照)
