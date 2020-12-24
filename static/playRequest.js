@@ -19,7 +19,9 @@ fetch("/start").then(response => {
 
 player_name=localStorage.getItem("storageName");
 console.log(player_name);
-document.getElementById('name_place').innerHTML=player_name+"さん、こんにちは"
+if(player_name!=null){
+    document.getElementById('name_place').innerHTML=player_name+"さん、こんにちは";
+}
 
 document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('vote').addEventListener("click", (e)=>{
@@ -82,12 +84,12 @@ document.addEventListener("DOMContentLoaded", (e)=>{
                     }
                 }
             }
+
             for(let i=0;i<4;i++){
                 if(n[i]==n_s[i]){
                     hit++;
                 }
             }
-
 
             document.getElementById("judge_result").innerHTML=String(hit)+"Hit "+String(blow)+"blow";
             document.getElementById("judge_log").innerHTML+="<br>"+"回数: "+String(play_count)+" "+String(input_num)+" -> "+String(hit)+" Hit "+String(blow)+"blow";
