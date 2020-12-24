@@ -19,7 +19,7 @@ fetch("/start").then(response => {
 
 player_name=localStorage.getItem("storageName");
 console.log(player_name);
-if(player_name!=""){
+if(player_name!=null){
     document.getElementById('name_place').innerHTML=player_name+"さん、こんにちは";
 }
 
@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         e.preventDefault();
         
         location.href="/";
+
     })
 }, false);
 
@@ -119,6 +120,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         document.getElementById("judge_log").innerHTML+="<br>"+"回数:"+String(play_count)+" ヒント: "+String(4-hint_index)+"桁目は "+String(n_s[hint_index]);
 
         document.getElementById('get_hint').style.display="none";
+        
     })
 }, false);
 
@@ -126,10 +128,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('view_ranking').addEventListener("click", (e)=>{
         e.preventDefault();
         
-        fetch("/ranking").then(response => {
-            console.log(response);
-            
-        });
+        location.href="/result/ranking";
 
     })
 }, false);
