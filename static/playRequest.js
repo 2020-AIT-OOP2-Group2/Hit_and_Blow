@@ -121,3 +121,15 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         document.getElementById('get_hint').style.display="none";
     })
 }, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('view_ranking').addEventListener("click", (e)=>{
+        e.preventDefault();
+        
+        fetch("/ranking").then(response => {
+            console.log(response);
+            
+        });
+
+    })
+}, false);
