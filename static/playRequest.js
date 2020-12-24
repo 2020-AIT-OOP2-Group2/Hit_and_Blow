@@ -19,7 +19,7 @@ fetch("/start").then(response => {
 
 player_name=localStorage.getItem("storageName");
 console.log(player_name);
-if(player_name!=null){
+if(player_name!=""){
     document.getElementById('name_place').innerHTML=player_name+"さん、こんにちは";
 }
 
