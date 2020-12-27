@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
 document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('get_hint').addEventListener("click", (e)=>{
         e.preventDefault();
-        play_count++;
+        play_count=play_count+3;
         hint_index=play_count%3;
         
         document.getElementById("judge_log").innerHTML+="<br>"+"回数:"+String(play_count)+" ヒント: "+String(4-hint_index)+"桁目は "+String(n_s[hint_index]);
