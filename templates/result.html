@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resurt</title>
     <script defer src="{{ url_for('static', filename='result.js') }}"></script>
-    <link rel="stylesheet" href="/static/result.css">
-    <script type="text/javascript" src="/static/result.js"></script>
+    <!-- <link rel="stylesheet" href="/static/result.css"> -->
 </head>
 <body>
     <h1>結果発表</h1>
-    <form action="/app" method="POST">
+
         <p1 class="result_out">
             <p2><br>ゲームクリア！！<br></p2>
             <label id= "name">○○さんは○手でクリアできました！ </label>
-            <br><button id="name_log">ランキング一覧</button>
-            <button id="restrat_set">もう一度チャレンジ</button>
+            <br>
+            <a href="/result/ranking"><button id="name_log">ランキング一覧</button></a>
             <button id=finish_set>ホームに戻る</button>
         </p1>
         

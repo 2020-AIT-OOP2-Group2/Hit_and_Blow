@@ -12,15 +12,20 @@ const headers = {
   'Content-Type': 'application/json'
 };
 fetch("./ranking.json", {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);*/
+console.log("hoge")
 
-let data = new FormData()
-data.append("mane", player_name)
-data.append("moves", play_count)
+const obj = {
+    "name":localStorage.getItem("storageName"),
+    "moves":localStorage.getItem("play_count")
+};
+const method = "POST";
+const body = JSON.stringify(obj);
+const headers = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+};
+fetch("/ranking", {method, headers, body})
 
-
-fetch('/ranking', { method: 'POST', body: data, }).then(function (response) {
-
-})
 
 document.getElementById("name").innerHTML=player_name+"さんは"+play_count+"手でクリア出来ました！！";
 
