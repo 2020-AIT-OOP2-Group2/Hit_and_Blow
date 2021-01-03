@@ -27,6 +27,12 @@ def ranking():
     return render_template('result.html')
 
 
+# ランキング一覧
+@app.route('/result/ranking')
+def ranking_data():
+    return render_template('ranking.html')
+
+
 if __name__ == "__main__":
     app.register_blueprint(random_number)
     app.register_blueprint(rank)

@@ -103,13 +103,32 @@ document.addEventListener("DOMContentLoaded", (e)=>{
 }, false);
 
 document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('back_home').addEventListener("click", (e)=>{
+        e.preventDefault();
+        
+        location.href="/";
+
+    })
+}, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
     document.getElementById('get_hint').addEventListener("click", (e)=>{
         e.preventDefault();
-        play_count++;
+        play_count=play_count+3;
         hint_index=play_count%3;
         
         document.getElementById("judge_log").innerHTML+="<br>"+"回数:"+String(play_count)+" ヒント: "+String(4-hint_index)+"桁目は "+String(n_s[hint_index]);
 
         document.getElementById('get_hint').style.display="none";
+        
+    })
+}, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('view_ranking').addEventListener("click", (e)=>{
+        e.preventDefault();
+        
+        location.href="/result/ranking";
+
     })
 }, false);
