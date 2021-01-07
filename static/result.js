@@ -37,3 +37,11 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         location.href="/";
     })
 }, false);
+
+document.addEventListener("DOMContentLoaded", (e)=>{
+    document.getElementById('ranking_set').addEventListener("click", (e)=>{
+        e.preventDefault();
+        
+        location.href="/result/ranking";
+    })
+}, false);
