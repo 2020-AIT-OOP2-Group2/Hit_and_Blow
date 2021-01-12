@@ -12,7 +12,7 @@ const headers = {
   'Content-Type': 'application/json'
 };
 fetch("./ranking.json", {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);*/
-console.log("hoge");
+// console.log("hoge");
 
 const obj = {
 	name: localStorage.getItem("storageName"),

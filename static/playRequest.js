@@ -8,9 +8,9 @@ var n_s = new Array(4);
 var hint_index, hint_num;
 
 fetch("./start").then((response) => {
-	console.log(response);
+	// console.log(response);
 	response.json().then((data) => {
-		console.log(data.number); // 取得されたレスポンスデータをデバッグ表示
+		// console.log(data.number); // 取得されたレスポンスデータをデバッグ表示
 		num = parseInt(data.number); //数字を取得
 		for (let i = 0; i < 4; i++) {
 			n_s[i] = Math.floor(num / Math.pow(10, i)) % 10;
@@ -19,7 +19,7 @@ fetch("./start").then((response) => {
 });
 
 player_name = localStorage.getItem("storageName");
-console.log(player_name);
+// console.log(player_name);
 if (player_name != null) {
 	document.getElementById("name_place").innerHTML =
 		player_name + "さん、こんにちは";
@@ -75,8 +75,8 @@ document.addEventListener(
 				return;
 			}
 
-			console.log(n);
-			console.log(n_s);
+			// console.log(n);
+			// console.log(n_s);
 
 			play_count++;
 
