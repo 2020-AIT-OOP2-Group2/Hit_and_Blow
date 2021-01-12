@@ -12,23 +12,29 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
   <!-- <link rel="stylesheet" href="/static/start.css"> -->
-  <script type="text/javascript" src="/static/ranking.js"></script>
+  <script defer type="text/javascript" src="/static/ranking.js"></script>
 </head>
 
-<body>
-  <h1>Hit&Blow</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Rank</td>
-        <th scope="col">Player</td>
-        <th scope="col">Moves</td>
-      </tr>
-    </thead>
-    <tbody id="ranking-data">
+<body class="p-3 mb-2 bg-info text-white">
 
-    </tbody>
-  </table>
+  <div class="text-center container">
+    <h1>Hit&Blow</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rank</td>
+          <th scope="col">Player</td>
+          <th scope="col">Moves</td>
+        </tr>
+      </thead>
+      <tbody id="ranking-data">
+      </tbody>
+    </table>
+
+    <button>
+      <a href="/" style="text-decoration: none;color: black;">ホームに戻る</a>
+    </button>
+  </div>
 </body>
 
 </html>
