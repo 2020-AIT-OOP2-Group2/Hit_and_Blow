@@ -36,7 +36,7 @@ document.addEventListener(
 		document.getElementById("finish_set").addEventListener("click", (e) => {
 			e.preventDefault();
 
-			location.href = "./";
+			location.href = "../";
 		});
 	},
 	false
