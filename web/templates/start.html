@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit&Blow</title>
+    <link rel="stylesheet" href="/static/start.css">
+    <script type="text/javascript" src="/static/start.js"></script>
+</head>
+
+<body>
+    <h1>Hit&Blow</h1>
+    <form id=addname action="/play" method="GET">
+        <div>
+            <p class=title><br>~rule~<br></p>
+            <p>ランダムに指定された４桁の数字を予想します。<br>数字と位置が一致すればヒット（Hit)<br>数字のみ一致すればブロー（B）<br>として計算され、4Hitとなればゲームクリアです。<br>ヒントを使用すると一箇所だけ数字がわかりますが手数が+3されます。<br>より少ない手でクリアできるとランキングに名前が載ります！！
+            </p>
+            <p><br>名前を入力してゲームスタート！</p>
+        </div>
+        <p class="name_input">
+            <label for="your_name">名前: </label>
+            <input type="text" id="your_name" name="name" required>
+        </p>
+        <button type="submit">ゲームスタート</button>
+    </form>
+</body>
+
+</html>

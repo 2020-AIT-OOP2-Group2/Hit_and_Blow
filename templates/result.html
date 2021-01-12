@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja">    
+<html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resurt</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script defer src="{{ url_for('static', filename='result.js') }}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script defer src="/static/start.js"></script>
     <!-- <link rel="stylesheet" href="/static/result.css"> -->
 </head>
-<body>
-    <body class="p-3 mb-2 bg-info text-white">
-    <div class="text-center">
-    <h1>結果発表</h1>
 
-        <p1 class="result_out">
-            <p2><br>ゲームクリア！！<br></p2>
-            <label id= "name">○○さんは○手でクリアできました！ </label>
-            <br>
-            <a href="/result/ranking"><button id="name_log">ランキング一覧</button></a>
-            <button id=finish_set>ホームに戻る</button>
-        </p1>
-    </form>
-    </div>
-    </body>    
-    
+<body>
+
+    <body class="p-3 mb-2 bg-info text-white">
+        <div class="text-center">
+            <h1>結果発表</h1>
+
+            <p1 class="result_out">
+                <p2><br>ゲームクリア！！<br></p2>
+                <label id="name">○○さんは○手でクリアできました！ </label>
+                <br>
+                <a href="./result/ranking"><button id="name_log">ランキング一覧</button></a>
+                <button id=finish_set>ホームに戻る</button>
+            </p1>
+            </form>
+        </div>
+    </body>
+
 </body>
+
 </html>

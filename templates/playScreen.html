@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit and Blowプレイ画面</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script defer src="{{ url_for('static', filename='playRequest.js') }}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script defer src="/static/playRequest.js"></script>
     <!--<script type="text/javascript" src="../static/playRequest.js"></script>-->
 </head>
+
 <body>
+
     <body class="p-3 mb-2 bg-info text-white">
-    <div class="text-center">
-    <h1 >Hit and Blow
-    <div class="d-flex align-items-start">
-        <div class="text-right">
-            <u class="text-warning" id="back_home" onclick="javascript:window.history.back(-1);return false;">home</u>
-            <u class="text-warning" id="view_ranking">Ranking</u>
+        <div class="text-center">
+            <h1>Hit and Blow
+                <div class="d-flex align-items-start">
+                    <div class="text-right">
+                        <u class="text-warning" id="back_home"
+                            onclick="javascript:window.history.back(-1);return false;">home</u>
+                        <u class="text-warning" id="view_ranking">Ranking</u>
+                    </div>
+                </div>
+            </h1>
+            <h2>
+                <div class="text-right">
+                    <button id="get_hint">Hint(残り1)</button>
+                </div>
+            </h2>
+            <h5>
+                <div id="judge_result" name="judge_result"></div>
+                <div id="name_place">名無しさん、こんにちは</div>
+                <label for="nums"><br>ユニークな４桁の数字を入力:</label>
+                <form id="inputs">
+                    <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:1234">
+                </form>
+                <button id="vote">judge!</button>
+                <div id="error_message" style="color: red;"></div>
+                <div id="judge_log">Result Log<br></div>
         </div>
-    </div>
-    </h1>
-    <h2>
-        <div class="text-right">
-        <button id="get_hint">Hint(残り1)</button>
-        </div>
-    </h2>
-    <h5>
-    <div id="judge_result" name="judge_result"></div>
-    <div id="name_place">名無しさん、こんにちは</div>
-    <label for="nums"><br>ユニークな４桁の数字を入力:</label>
-    <form id="inputs">
-        <input type="text" id="nums" minlength="4" maxlength="4" placeholder="example:1234">
-    </form>
-    <button id="vote">judge!</button>
-    <div id="error_message" style="color: red;"></div>
-    <div id="judge_log">Result Log<br></div>
-    </div>  
-    </h5>
+        </h5>
     </body>
 </body>
+
 </html>
