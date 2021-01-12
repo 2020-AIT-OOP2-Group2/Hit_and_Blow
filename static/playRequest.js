@@ -7,7 +7,7 @@ var n = new Array(4);
 var n_s = new Array(4);
 var hint_index, hint_num;
 
-fetch("/start").then((response) => {
+fetch("./start").then((response) => {
 	console.log(response);
 	response.json().then((data) => {
 		console.log(data.number); // 取得されたレスポンスデータをデバッグ表示
