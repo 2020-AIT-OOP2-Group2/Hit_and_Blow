@@ -85,7 +85,7 @@ document.addEventListener(
 				document.getElementById("judge_result").innerHTML = "正解です";
 				document.getElementById("error_message").innerHTML = "";
 				localStorage.setItem("play_count", play_count);
-				location.href = "/play/ranking";
+				location.href = "./play/ranking";
 			} else {
 				document.getElementById("error_message").innerHTML = "";
 				//間違いだったら
