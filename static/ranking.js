@@ -1,4 +1,4 @@
-fetch("/ranking").then((data) => {
+fetch("../ranking").then((data) => {
 	data.json().then((j) => {
 		rankingData = document.querySelector("#ranking-data");
 		j.forEach((elm) => {
