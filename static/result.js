@@ -24,7 +24,7 @@ const headers = {
 	Accept: "application/json",
 	"Content-Type": "application/json",
 };
-fetch("./ranking", { method, headers, body });
+fetch("../ranking", { method, headers, body });
 
 document.getElementById("name").innerHTML =
 	player_name + "さんは" + play_count + "手でクリア出来ました！！";
@@ -48,7 +48,7 @@ document.addEventListener(
 		document.getElementById("ranking_set").addEventListener("click", (e) => {
 			e.preventDefault();
 
-			location.href = "./result/ranking";
+			location.href = "../result/ranking";
 		});
 	},
 	false
